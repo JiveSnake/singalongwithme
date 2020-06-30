@@ -3,19 +3,19 @@ import Head from 'next/head'
 const Home = () => (
   <div className="container">
     <Head>
-      <title>Create Next App</title>
+      <title>Sing Along With Me</title>
       <link rel="icon" href="/favicon.ico" />
     </Head>
 
     <main>
       <h1 className="title">
-        Welcome to <a href="https://nextjs.org">Next.js!</a>
+        Sing Along With Me
       </h1>
 
       <p className="description">
-        Get started by editing <code>pages/index.js</code>
+        Hi Una!
       </p>
-
+{/* 
       <div className="grid">
         <a href="https://nextjs.org/docs" className="card">
           <h3>Documentation &rarr;</h3>
@@ -44,17 +44,10 @@ const Home = () => (
             Instantly deploy your Next.js site to a public URL with Vercel.
           </p>
         </a>
-      </div>
+      </div> */}
     </main>
 
     <footer>
-      <a
-        href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Powered by <img src="/vercel.svg" alt="Vercel Logo" />
-      </a>
     </footer>
 
     <style jsx>{`
