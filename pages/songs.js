@@ -1,7 +1,7 @@
 import { useUser } from '../lib/hooks'
 import Layout from '../components/layout'
 
-const Profile = () => {
+const Songs = () => {
   const user = useUser({ redirectTo: '/login' })
 
   return (
@@ -17,4 +17,4 @@ const Profile = () => {
   )
 }
 
-export default Profile
+export default Songs

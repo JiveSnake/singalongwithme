@@ -3,26 +3,28 @@ import Header from './header'
 
 const Layout = (props) => (
   <>
-    <Head>
-      <title>Magic</title>
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
+    <div id="wrapper">
+      <Head>
+        <title>Sing Along With Me</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
 
-    <Header />
+      <Header />
 
-    <main>
-      <div className="container">{props.children}</div>
-    </main>
+      <main>
+        <div className="container">{props.children}</div>
+      </main>
 
-    <footer>
-      <a
-        href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Powered by <img src="/vercel.svg" alt="Vercel Logo" />
-      </a>
-    </footer>
+      <footer>
+        <a
+          href="https://www.unaulla.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Created by Una Ulla
+        </a>
+      </footer>
+    </div>
 
     <style jsx global>{`
       *,
@@ -30,12 +32,24 @@ const Layout = (props) => (
       *::after {
         box-sizing: border-box;
       }
+      html,
       body {
+        padding: 0;
         margin: 0;
-        color: #333;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-          'Helvetica Neue', Arial, Noto Sans, sans-serif, 'Apple Color Emoji',
-          'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+        height: 100%;
+        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+        Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      #wrapper {
+        min-height: 100%;
+        position: relative;
+      }
+      main {
+        padding: 10px;
+        padding-bottom: 60px;
       }
       .container {
         max-width: 42rem;
@@ -43,6 +57,7 @@ const Layout = (props) => (
         padding: 2rem 1.25rem;
       }
       footer {
+        position: absolute;
         width: 100%;
         height: 100px;
         border-top: 1px solid #eaeaea;

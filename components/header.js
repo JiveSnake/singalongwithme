@@ -10,14 +10,14 @@ const Header = () => {
         <ul>
           <li>
             <Link href="/">
-              <a>Home</a>
+              <a>Sing Along With Me</a>
             </Link>
           </li>
           {user ? (
             <>
               <li>
-                <Link href="/profile">
-                  <a>Profile</a>
+                <Link href="/songs">
+                  <a>Songs</a>
                 </Link>
               </li>
               <li>

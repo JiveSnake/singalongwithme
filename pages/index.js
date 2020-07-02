@@ -1,37 +1,31 @@
-import { useUser } from '../lib/hooks'
+import useSWR from 'swr'
 import Layout from '../components/layout'
 
+const fetcher = (...args) => fetch(...args).then((res) => res.json())
+
 const Home = () => {
-  const user = useUser()
+  const { data: song, error } = useSWR('/api/song', fetcher)
+  if (error) return <div>failed to load</div>
+  if (!song) return <div>loading...</div>
 
   return (
     <Layout>
-      <h1>Magic Example</h1>
+      
+      <h1>Sing Along With Me</h1>
 
-      <p>Steps to test this authentication example:</p>
-
-      <ol>
-        <li>Click Login and enter an email.</li>
-        <li>
-          You'll be redirected to Home. Click on Profile, notice how your
-          session is being used through a token stored in a cookie.
-        </li>
-        <li>
-          Click Logout and try to go to Profile again. You'll get redirected to
-          Login.
-        </li>
-      </ol>
-
-      {user && (
+      {song && (
         <>
-          <p>Currently logged in as:</p>
-          <pre>{JSON.stringify(user, null, 2)}</pre>
+          <h2>{song.title}</h2>
+          <h3>By {song.artist}</h3>
+          {song.lyrics.split("\\n\\n").map(verse => {
+            return <p className="verse">{verse.split("\\n").map(line => <p className="line">{line}</p>)}</p>
+          })}
         </>
       )}
 
       <style jsx>{`
-        li {
-          margin-bottom: 0.5rem;
+        .line {
+          margin: 0;
         }
       `}</style>
     </Layout>

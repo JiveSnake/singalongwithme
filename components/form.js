@@ -6,7 +6,7 @@ const Form = ({ errorMessage, onSubmit }) => (
     </label>
 
     <div className="submit">
-      <button type="submit">Sign Up / Login</button>
+      <button type="submit">Login</button>
     </div>
 
     {errorMessage && <p className="error">{errorMessage}</p>}
